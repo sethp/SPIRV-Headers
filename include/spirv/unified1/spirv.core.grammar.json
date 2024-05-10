@@ -9892,6 +9892,15 @@
       ],
       "capabilities" : [ "MaskedGatherScatterINTEL" ],
       "version" : "None"
+    },
+    {
+      "opname" : "OpDispatchTALVOS",
+      "class"  : "Reserved",
+      "opcode" : 65535,
+      "operands" : [
+      ],
+      "capabilities" : [ "DispatchTALVOS" ],
+      "version" : "None"
     }
   ],
   "operand_kinds" : [
@@ -15687,7 +15696,7 @@
           "value" : 5087,
           "extensions" : [ "SPV_KHR_quad_control" ],
           "version" : "None"
-        },		
+        },
         {
           "enumerant" : "SampleMaskOverrideCoverageNV",
           "value" : 5249,
@@ -16575,6 +16584,12 @@
           "enumerant" : "RegisterLimitsINTEL",
           "value" : 6460,
           "extensions" : [ "SPV_INTEL_maximum_registers" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "DispatchTALVOS",
+          "value" : 4294967295,
+          "extensions" : [ "SPV_TALVOS_dispatch" ],
           "version" : "None"
         }
       ]

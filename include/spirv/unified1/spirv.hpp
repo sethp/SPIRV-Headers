@@ -1230,6 +1230,7 @@ enum Capability {
     CapabilityMaskedGatherScatterINTEL = 6427,
     CapabilityCacheControlsINTEL = 6441,
     CapabilityRegisterLimitsINTEL = 6460,
+    CapabilityDispatchTALVOS = 4294967295,
     CapabilityMax = 0x7fffffff,
 };
 
@@ -2149,6 +2150,7 @@ enum Op {
     OpGroupLogicalXorKHR = 6408,
     OpMaskedGatherINTEL = 6428,
     OpMaskedScatterINTEL = 6429,
+    OpDispatchTALVOS = 65535,
     OpMax = 0x7fffffff,
 };
 
@@ -2882,6 +2884,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
     case OpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
     case OpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpDispatchTALVOS: *hasResult = false; *hasResultType = false; break;
     }
 }
 inline const char* SourceLanguageToString(SourceLanguage value) {
@@ -3790,6 +3793,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityMaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
     case CapabilityCacheControlsINTEL: return "CacheControlsINTEL";
     case CapabilityRegisterLimitsINTEL: return "RegisterLimitsINTEL";
+    case CapabilityDispatchTALVOS: return "DispatchTALVOS";
     default: return "Unknown";
     }
 }
@@ -4653,6 +4657,7 @@ inline const char* OpToString(Op value) {
     case OpGroupLogicalXorKHR: return "OpGroupLogicalXorKHR";
     case OpMaskedGatherINTEL: return "OpMaskedGatherINTEL";
     case OpMaskedScatterINTEL: return "OpMaskedScatterINTEL";
+    case OpDispatchTALVOS: return "OpDispatchTALVOS";
     default: return "Unknown";
     }
 }

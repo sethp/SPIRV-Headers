@@ -1206,7 +1206,8 @@
                     "GroupUniformArithmeticKHR": 6400,
                     "MaskedGatherScatterINTEL": 6427,
                     "CacheControlsINTEL": 6441,
-                    "RegisterLimitsINTEL": 6460
+                    "RegisterLimitsINTEL": 6460,
+                    "DispatchTALVOS": -1
                 }
             },
             {
@@ -2147,7 +2148,8 @@
                     "OpGroupLogicalOrKHR": 6407,
                     "OpGroupLogicalXorKHR": 6408,
                     "OpMaskedGatherINTEL": 6428,
-                    "OpMaskedScatterINTEL": 6429
+                    "OpMaskedScatterINTEL": 6429,
+                    "OpDispatchTALVOS": 65535
                 }
             }
         ]

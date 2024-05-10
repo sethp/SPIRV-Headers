@@ -1235,6 +1235,7 @@ namespace Spv
             MaskedGatherScatterINTEL = 6427,
             CacheControlsINTEL = 6441,
             RegisterLimitsINTEL = 6460,
+            DispatchTALVOS = 4294967295,
         }
 
         [AllowDuplicates, CRepr] public enum RayFlagsShift
@@ -2158,6 +2159,7 @@ namespace Spv
             OpGroupLogicalXorKHR = 6408,
             OpMaskedGatherINTEL = 6428,
             OpMaskedScatterINTEL = 6429,
+            OpDispatchTALVOS = 65535,
         }
     }
 }
