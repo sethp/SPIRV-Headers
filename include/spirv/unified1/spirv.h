@@ -1234,6 +1234,8 @@ typedef enum SpvCapability_ {
     SpvCapabilityMaskedGatherScatterINTEL = 6427,
     SpvCapabilityCacheControlsINTEL = 6441,
     SpvCapabilityRegisterLimitsINTEL = 6460,
+    SpvCapabilityBuffersTALVOS = 4294967293,
+    SpvCapabilityExecTALVOS = 4294967294,
     SpvCapabilityDispatchTALVOS = 4294967295,
     SpvCapabilityMax = 0x7fffffff,
 } SpvCapability;
@@ -2154,6 +2156,8 @@ typedef enum SpvOp_ {
     SpvOpGroupLogicalXorKHR = 6408,
     SpvOpMaskedGatherINTEL = 6428,
     SpvOpMaskedScatterINTEL = 6429,
+    SpvOpBufferTALVOS = 65533,
+    SpvOpExecutionGlobalSizeTALVOS = 65534,
     SpvOpDispatchTALVOS = 65535,
     SpvOpMax = 0x7fffffff,
 } SpvOp;
@@ -2888,6 +2892,8 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
+    case SpvOpBufferTALVOS: *hasResult = true; *hasResultType = true; break;
+    case SpvOpExecutionGlobalSizeTALVOS: *hasResult = false; *hasResultType = false; break;
     case SpvOpDispatchTALVOS: *hasResult = false; *hasResultType = false; break;
     }
 }
@@ -3797,6 +3803,8 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityMaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
     case SpvCapabilityCacheControlsINTEL: return "CacheControlsINTEL";
     case SpvCapabilityRegisterLimitsINTEL: return "RegisterLimitsINTEL";
+    case SpvCapabilityBuffersTALVOS: return "BuffersTALVOS";
+    case SpvCapabilityExecTALVOS: return "ExecTALVOS";
     case SpvCapabilityDispatchTALVOS: return "DispatchTALVOS";
     default: return "Unknown";
     }
@@ -4661,6 +4669,8 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpGroupLogicalXorKHR: return "OpGroupLogicalXorKHR";
     case SpvOpMaskedGatherINTEL: return "OpMaskedGatherINTEL";
     case SpvOpMaskedScatterINTEL: return "OpMaskedScatterINTEL";
+    case SpvOpBufferTALVOS: return "OpBufferTALVOS";
+    case SpvOpExecutionGlobalSizeTALVOS: return "OpExecutionGlobalSizeTALVOS";
     case SpvOpDispatchTALVOS: return "OpDispatchTALVOS";
     default: return "Unknown";
     }

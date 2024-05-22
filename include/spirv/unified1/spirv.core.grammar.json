@@ -9894,6 +9894,33 @@
       "version" : "None"
     },
     {
+      "opname" : "OpBufferTALVOS",
+      "class"  : "Reserved",
+      "opcode" : 65533,
+      "operands" : [
+        { "kind" : "IdResultType",                     "name" : "'Buffer Type'" },
+        { "kind" : "IdResult" },
+        { "kind" : "StorageClass" },
+        { "kind" : "LiteralInteger",                   "name" : "'Buffer Size (bytes)'" },
+        { "kind" : "LiteralString", "quantifier": "?", "name" : "'Buffer Name'" }
+      ],
+      "capabilities" : [ "BuffersTALVOS" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpExecutionGlobalSizeTALVOS",
+      "class"  : "Reserved",
+      "opcode" : 65534,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Entry Point'" },
+        { "kind" : "LiteralInteger",  "name" : "'x size'" },
+        { "kind" : "LiteralInteger",  "name" : "'y size'" },
+        { "kind" : "LiteralInteger",  "name" : "'z size'" }
+      ],
+      "capabilities" : [ "ExecTALVOS" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpDispatchTALVOS",
       "class"  : "Reserved",
       "opcode" : 65535,
@@ -16584,6 +16611,18 @@
           "enumerant" : "RegisterLimitsINTEL",
           "value" : 6460,
           "extensions" : [ "SPV_INTEL_maximum_registers" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BuffersTALVOS",
+          "value" : 4294967293,
+          "extensions" : [ "SPV_TALVOS_buffers" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ExecTALVOS",
+          "value" : 4294967294,
+          "extensions" : [ "SPV_TALVOS_exec" ],
           "version" : "None"
         },
         {

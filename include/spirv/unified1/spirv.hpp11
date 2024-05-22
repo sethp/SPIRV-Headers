@@ -1230,6 +1230,8 @@ enum class Capability : unsigned {
     MaskedGatherScatterINTEL = 6427,
     CacheControlsINTEL = 6441,
     RegisterLimitsINTEL = 6460,
+    BuffersTALVOS = 4294967293,
+    ExecTALVOS = 4294967294,
     DispatchTALVOS = 4294967295,
     Max = 0x7fffffff,
 };
@@ -2150,6 +2152,8 @@ enum class Op : unsigned {
     OpGroupLogicalXorKHR = 6408,
     OpMaskedGatherINTEL = 6428,
     OpMaskedScatterINTEL = 6429,
+    OpBufferTALVOS = 65533,
+    OpExecutionGlobalSizeTALVOS = 65534,
     OpDispatchTALVOS = 65535,
     Max = 0x7fffffff,
 };
@@ -2884,6 +2888,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
+    case Op::OpBufferTALVOS: *hasResult = true; *hasResultType = true; break;
+    case Op::OpExecutionGlobalSizeTALVOS: *hasResult = false; *hasResultType = false; break;
     case Op::OpDispatchTALVOS: *hasResult = false; *hasResultType = false; break;
     }
 }
@@ -3793,6 +3799,8 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityMaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
     case CapabilityCacheControlsINTEL: return "CacheControlsINTEL";
     case CapabilityRegisterLimitsINTEL: return "RegisterLimitsINTEL";
+    case CapabilityBuffersTALVOS: return "BuffersTALVOS";
+    case CapabilityExecTALVOS: return "ExecTALVOS";
     case CapabilityDispatchTALVOS: return "DispatchTALVOS";
     default: return "Unknown";
     }
@@ -4657,6 +4665,8 @@ inline const char* OpToString(Op value) {
     case OpGroupLogicalXorKHR: return "OpGroupLogicalXorKHR";
     case OpMaskedGatherINTEL: return "OpMaskedGatherINTEL";
     case OpMaskedScatterINTEL: return "OpMaskedScatterINTEL";
+    case OpBufferTALVOS: return "OpBufferTALVOS";
+    case OpExecutionGlobalSizeTALVOS: return "OpExecutionGlobalSizeTALVOS";
     case OpDispatchTALVOS: return "OpDispatchTALVOS";
     default: return "Unknown";
     }

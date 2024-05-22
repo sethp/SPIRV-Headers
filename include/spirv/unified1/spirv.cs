@@ -1234,6 +1234,8 @@ namespace Spv
             MaskedGatherScatterINTEL = 6427,
             CacheControlsINTEL = 6441,
             RegisterLimitsINTEL = 6460,
+            BuffersTALVOS = 4294967293,
+            ExecTALVOS = 4294967294,
             DispatchTALVOS = 4294967295,
         }
 
@@ -2158,6 +2160,8 @@ namespace Spv
             OpGroupLogicalXorKHR = 6408,
             OpMaskedGatherINTEL = 6428,
             OpMaskedScatterINTEL = 6429,
+            OpBufferTALVOS = 65533,
+            OpExecutionGlobalSizeTALVOS = 65534,
             OpDispatchTALVOS = 65535,
         }
     }
